@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TodoItem from './TodoItem'
 export default class TodoList extends Component {
   render() {
-    const { items , handleDelete , handleEdit} = this.props;
+    const { items , handleDelete , handleEdit , clearList} = this.props;
     return (
       <div> 
         <ul className='list-group my-5'>
@@ -17,6 +17,7 @@ export default class TodoList extends Component {
                 />
             )})
             }
+          <button className='btn btn-block btn-danger' onClick={clearList}>Clear List</button>
         </ul>
       </div>
     )
