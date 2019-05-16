@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
 export  class TodoInput extends Component {
-// xem kĩ nha
   render() {
-
-    const { item, handleChange , handleSubmit } = this.props; 
+    const { item, handleChange , handleSubmit , editItem } = this.props; 
     return (
       <div className='card card-body my-3'>
         <form>
@@ -21,7 +19,7 @@ export  class TodoInput extends Component {
             value={item}
             onChange={handleChange}></input>
           </div>
-          <button onClick={handleSubmit} className='btn btn-block btn-primary mt-3'> add item </button>
+          <button onClick={handleSubmit} className={editItem ? 'btn btn-block btn-success mt-3' : 'btn btn-block btn-primary mt-3'}> {editItem ? 'edit item' : 'add item'}</button>
         </form>
       </div>
     )
